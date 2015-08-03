@@ -3,7 +3,7 @@ CF-Abacus
 
 The Abacus Cloud service usage metering and aggregation project.
 
-[![Build Status](https://travis-ci.org/jsdelfino/cf-abacus-develop.svg)](https://travis-ci.org/jsdelfino/cf-abacus-develop) [![Coverage Status](https://coveralls.io/repos/jsdelfino/cf-abacus-develop/badge.svg?branch=master&service=github)](https://coveralls.io/github/jsdelfino/cf-abacus-develop?branch=master)
+[![Build Status](https://travis-ci.org/cloudfoundry-incubator/cf-abacus.svg)](https://travis-ci.org/cloudfoundry-incubator/cf-abacus) [![Coverage Status](https://coveralls.io/repos/cloudfoundry-incubator/cf-abacus/badge.svg?branch=master&service=github)](https://coveralls.io/github/cloudfoundry-incubator/cf-abacus?branch=master)
 
 Overview
 ---
@@ -75,12 +75,12 @@ Getting apps in org <your organization> / space <your space>...
 OK
 
 name                          requested state   instances   memory   disk   urls   
-cf-abacus-usage-collector     started           2/2         512M     1G     cf-abacus-usage-collector.10.244.0.34.xip.io   
-cf-abacus-usage-meter         started           2/2         512M     1G     cf-abacus-usage-meter.10.244.0.34.xip.io 
-cf-abacus-usage-accumulator   started           4/4         512M     1G     cf-abacus-usage-accumulator.10.244.0.34.xip.io   
-cf-abacus-usage-aggregator    started           4/4         512M     1G     cf-abacus-usage-aggregator.10.244.0.34.xip.io   
-cf-abacus-usage-reporting     started           2/2         512M     1G     cf-abacus-usage-reporting.10.244.0.34.xip.io   
-cf-abacus-dbserver            started           1/1         1G       1G     cf-abacus-dbserver.10.244.0.34.xip.io   
+abacus-usage-collector     started           2/2         512M     1G     abacus-usage-collector.10.244.0.34.xip.io   
+abacus-usage-meter         started           2/2         512M     1G     abacus-usage-meter.10.244.0.34.xip.io 
+abacus-usage-accumulator   started           4/4         512M     1G     abacus-usage-accumulator.10.244.0.34.xip.io   
+abacus-usage-aggregator    started           4/4         512M     1G     abacus-usage-aggregator.10.244.0.34.xip.io   
+abacus-usage-reporting     started           2/2         512M     1G     abacus-usage-reporting.10.244.0.34.xip.io   
+abacus-dbserver            started           1/1         1G       1G     abacus-dbserver.10.244.0.34.xip.io   
 ```
 
 Running the demo
