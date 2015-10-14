@@ -197,6 +197,9 @@ describe('abacus-usage-accumulator-itest', () => {
       ]
     });
 
+    // Accumulated usage for given org, resource instance and usage #s
+    // TODO check the values of the accumulated usage
+    /*
     const accumulatedTemplate = (o, ri, u) => extend(
       omit(meteredTemplate(o, ri, u), ['id', 'metered_usage',
         'measured_usage', 'start']), {
@@ -217,6 +220,7 @@ describe('abacus-usage-accumulator-itest', () => {
           start: meteredTemplate(o, ri, 0).start
         }
     );
+    */
 
     // Post a metered usage doc, throttled to default concurrent requests
     const post = throttle((o, ri, u, cb) => {
@@ -229,20 +233,20 @@ describe('abacus-usage-accumulator-itest', () => {
           expect(val.statusCode).to.equal(201);
           expect(val.headers.location).to.not.equal(undefined);
 
-          debug('Accumulated metered usage for org%d instance%d' +
+          debug('Metered usage for org%d instance%d' +
             ' usage%d, verifying it...', o + 1, ri + 1, u + 1);
 
           brequest.get(val.headers.location, undefined, (err, val) => {
-            debug('Verify accumulated usage for org%d instance%d usage%d',
+            debug('Verify metered usage for org%d instance%d usage%d',
               o + 1, ri + 1, u + 1);
 
             expect(err).to.equal(undefined);
             expect(val.statusCode).to.equal(200);
 
             expect(omit(val.body, ['id', 'processed_usage_id'])).to.deep
-              .equal(accumulatedTemplate(o, ri, u));
+              .equal(meteredTemplate(o, ri, u));
 
-            debug('Verified accumulated usage for org%d instance%d usage%d',
+            debug('Verified metered usage for org%d instance%d usage%d',
               o + 1, ri + 1, u + 1);
 
             cb();
