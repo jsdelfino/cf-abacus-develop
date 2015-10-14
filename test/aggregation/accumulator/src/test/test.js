@@ -13,7 +13,6 @@ const express = require('abacus-express');
 
 const map = _.map;
 const range = _.range;
-const extend = _.extend;
 const clone = _.clone;
 const omit = _.omit;
 
@@ -53,6 +52,7 @@ const moduleDir = (module) => {
   return path.substr(0, path.indexOf(module + '/') + module.length);
 };
 
+/*
 // Converts a millisecond number to a format a number that is YYYYMMDDHHmmSS
 const dateUTCNumbify = (t) => {
   const d = new Date(t);
@@ -60,7 +60,9 @@ const dateUTCNumbify = (t) => {
     + d.getUTCDate() * 1000000 + d.getUTCHours() * 10000 + d.getUTCMinutes()
     * 100 + d.getUTCSeconds();
 };
+*/
 
+/*
 // Converts a number output in dateUTCNumbify back to a Date object
 const revertUTCNumber = (n) => {
   const numstring = n.toString();
@@ -74,7 +76,9 @@ const revertUTCNumber = (n) => {
   ));
   return d;
 };
+*/
 
+/*
 // Calculates the accumulated quantity given an end time, u, window size,
 // and multiplier factor of the usage
 const calculateQuantityByWindow = (e, u, w, m, f) => {
@@ -86,7 +90,9 @@ const calculateQuantityByWindow = (e, u, w, m, f) => {
   const windowTime = revertUTCNumber(windowTimeNum).getTime();
   return f(m, Math.min(time - windowTime, u));
 };
+*/
 
+/*
 // Builds the quantity array in the accumulated usage
 const buildQuantity = (e, u, m, f) => {
   // Scaling factor for a time window
@@ -104,6 +110,7 @@ const buildQuantity = (e, u, m, f) => {
   });
   return quantity;
 };
+*/
 
 describe('abacus-usage-accumulator-itest', () => {
   before(() => {
@@ -243,8 +250,8 @@ describe('abacus-usage-accumulator-itest', () => {
             expect(err).to.equal(undefined);
             expect(val.statusCode).to.equal(200);
 
-            expect(omit(val.body, ['id', 'processed_usage_id'])).to.deep
-              .equal(meteredTemplate(o, ri, u));
+            expect(omit(val.body, 'id', 'processed_usage_id')).to.deep
+              .equal(omit(meteredTemplate(o, ri, u), 'id'));
 
             debug('Verified metered usage for org%d instance%d usage%d',
               o + 1, ri + 1, u + 1);
