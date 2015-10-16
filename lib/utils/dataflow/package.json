@@ -46,6 +46,7 @@
     "abacus-throttle": "file:../../utils/throttle",
     "abacus-transform": "file:../../utils/transform",
     "abacus-urienv": "file:../../utils/urienv",
+    "abacus-vcapenv": "file:../../utils/vcapenv",
     "abacus-yieldable": "file:../../utils/yieldable",
     "underscore": "^1.8.3"
   },
