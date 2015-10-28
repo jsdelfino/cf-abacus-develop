@@ -1,0 +1,52 @@
+{
+  "name": "abacus-launcher",
+  "description": "Launch multiple instances of an application",
+  "license": "Apache-2.0",
+  "version": "0.0.2-rc.2",
+  "private": true,
+  "homepage": "https://github.com/cloudfoundry-incubator/cf-abacus/lib/utils/launcher",
+  "bugs": {
+    "url": "https://github.com/cloudfoundry-incubator/cf-abacus/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/cloudfoundry-incubator/cf-abacus.git"
+  },
+  "keywords": [
+    "cf",
+    "abacus"
+  ],
+  "files": [
+    ".npmrc",
+    "launch",
+    "lib/",
+    "src/"
+  ],
+  "main": "lib/index.js",
+  "bin": {
+    "launch": "./launch"
+  },
+  "scripts": {
+    "babel": "babel",
+    "test": "eslint && mocha",
+    "lint": "eslint",
+    "pub": "publish"
+  },
+  "dependencies": {
+    "abacus-debug": "file:../debug",
+    "abacus-rc": "file:../rc",
+    "abacus-vcapenv": "file:../vcapenv",
+    "commander": "^2.8.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "abacus-babel": "file:../../../tools/babel",
+    "abacus-eslint": "file:../../../tools/eslint",
+    "abacus-mocha": "file:../../../tools/mocha",
+    "abacus-publish": "file:../../../tools/publish"
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=2.0.0"
+  }
+}

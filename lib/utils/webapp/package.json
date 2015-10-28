@@ -35,9 +35,11 @@
   "dependencies": {
     "abacus-cluster": "file:../cluster",
     "abacus-debug": "file:../debug",
+    "abacus-eureka": "file:../eureka",
     "abacus-express": "file:../express",
     "abacus-hystrix": "file:../hystrix",
     "abacus-perf": "file:../perf",
+    "abacus-rc": "file:../rc",
     "abacus-vcapenv": "file:../vcapenv",
     "commander": "^2.8.1",
     "underscore": "^1.8.3"
