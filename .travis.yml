@@ -1,8 +1,6 @@
 matrix:
   include:
     - os: "linux"
-      env: NODE_VERSION="4.2" CF_TEST="false"
-    - os: "linux"
       env: NODE_VERSION="0.12" CF_TEST="true"
 
 before_install:
