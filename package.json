@@ -58,6 +58,7 @@
     "cfstart": "bin/cfstart",
     "cfstop": "bin/cfstop",
     "cftest": "bin/cftest",
+    "cfbuild": "npm run build && npm run cftest",
     "boshrelease": "bin/boshrelease",
     "boshdeploy": "bin/boshdeploy",
     "boshrun": "bin/boshrun"

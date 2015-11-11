@@ -12,8 +12,7 @@ before_install:
 install: echo "install"
 
 script:
-  - npm run cibuild
-  - npm run cftest
+  - npm run cfbuild
 
 after_script:
   - npm run coveralls
