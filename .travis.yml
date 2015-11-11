@@ -1,19 +1,24 @@
 matrix:
   include:
     - os: "linux"
-      env: NODE_VERSION="4.2"
+      env: NODE_VERSION="4.2" CF_TEST=false
     - os: "linux"
-      env: NODE_VERSION="0.12"
+      env: NODE_VERSION="0.12" CF_TEST=true
 
 before_install:
   - rm -rf ~/.nvm
   - git clone https://github.com/creationix/nvm.git ~/.nvm
   -  source ~/.nvm/nvm.sh
   -  nvm install $NODE_VERSION
+
 install: echo "install"
 
-script: npm run cibuild
-after_script: npm run coveralls
+script:
+  - npm run cibuild
+  - npm run cftest
+
+after_script:
+  - npm run coveralls
 
 notifications:
   irc:
