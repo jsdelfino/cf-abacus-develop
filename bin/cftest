@@ -22,6 +22,16 @@ if [ "$1" != "" ]; then
   CF_DOMAIN=$6
 fi
 
+# Download the CF CLI
+mkdir -p bin/.cf
+UNAME=$(uname)
+if [ "$UNAME" == "Darwin" ]; then
+  (cd bin/.cf && curl -L "https://cli.run.pivotal.io/stable?release=macosx64-binary&source=github" | tar -zx)
+else
+  (cd bin/.cf && curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx)
+fi
+export PATH=$PATH:$(pwd)/bin/.cf
+
 # Login
 cf api --skip-ssl-validation https://api.$CF_API
 cf login -u $CF_USER -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
