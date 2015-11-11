@@ -57,6 +57,7 @@
     "cfdelete": "bin/cfdelete",
     "cfstart": "bin/cfstart",
     "cfstop": "bin/cfstop",
+    "cftest": "bin/cftest",
     "boshrelease": "bin/boshrelease",
     "boshdeploy": "bin/boshdeploy",
     "boshrun": "bin/boshrun"
