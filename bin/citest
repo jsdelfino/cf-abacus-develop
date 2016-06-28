@@ -11,7 +11,7 @@ if [ "$CI_TEST" != "false" ]; then
   # integration test matrix, we would need 2197 (= 13 * 13 * 13)
   # usage submissions to get above 90 percent regression coverage
 
-  #npm run itest -- -o 4 -i 4 -u 4
+  npm run itest -- -o 4 -i 4 -u 4
 
   # Run demo and perf test without security
   npm start
